@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Invite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .yes {
+            background: green;
+            color: white;
+        }
+        .no {
+            background: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Will you be my Valentine? 💖</h2>
+        <div class="buttons">
+            <button class="yes" id="yes" onclick="acceptProposal()">Yes</button>
+            <button class="no" id="no" onclick="shrinkNo()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function acceptProposal() {
+            alert("Yay! Can't wait for our date! 💕🥰");
+        }
+
+        function shrinkNo() {
+            var noButton = document.getElementById('no');
+            var yesButton = document.getElementById('yes');
+            var currentSize = parseFloat(window.getComputedStyle(noButton).fontSize);
+            
+            if (currentSize > 5) {
+                noButton.style.fontSize = (currentSize - 2) + "px";
+                yesButton.style.fontSize = (parseFloat(window.getComputedStyle(yesButton).fontSize) + 10) + "px";
+            }
+        }
+    </script>
+</body>
+</html>
